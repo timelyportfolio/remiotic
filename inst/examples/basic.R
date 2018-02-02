@@ -43,14 +43,32 @@ htmlwidgets::prependContent(
 
 
 remiotic(
-  data = data.frame(
-    x = 1:10,
-    y = runif(10)
+  # lines expected to be an array of arrays
+  #  for now do it the really ugly way
+  data = list(
+    list(
+      group = "A",
+      coordinates = lapply(0:10, function(x) list(x=x, y=runif(1)))
+    )
   ),
   frame = "XYFrame",
   props = list(
     shape = "lines",
     xAccessor = "x",
-    yAccessor = "y"
-  )
+    yAccessor = "y",
+    xExtent = c(0, 10),
+    yExtent = c(0, 1),
+    lineStyle = list(stroke = "black"),
+    margin = list(
+      top = 20,
+      right = 40,
+      bottom = 50,
+      left = 50
+    ),
+    axes = list(
+      list(orient = "left"),
+      list(orient = "bottom")
+    )
+  ),
+  width = "100%"
 )

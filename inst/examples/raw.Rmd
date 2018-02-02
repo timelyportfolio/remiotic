@@ -1,0 +1,123 @@
+---
+title: "In Raw Form"
+author: "Kent Russell"
+date: "February 1, 2018"
+output:
+  html_document:
+    theme: null
+    mathjax: null
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+`remiotic` will bring the power of Semiotic to R, and hopefully the R user won't have to know JavaScript to use it.  The lazy way to build the bridge is to not document or validate and force the user to pass a list of list of lists to make their graph.  Since this is the first version and merely a proof-of-concept, this lazy approach is what I have done.  Let's see if it works.  Since this is a Rmarkdown document, if charts appear, then we prove part of the concept.
+
+## Install
+
+This is raw, alpha, and will change dramatically and rapidly, so you have been warned.  To install, use `devtools::install_bitbucket`.  Yep, bitbucket to keep it sneaky.
+
+```{r eval = FALSE}
+devtools::install_bitbucket("timelyportfolio/remiotic")
+```
+
+## Points
+
+So now to the list of lists that I promised that hopefully will go away one day.  We'll intentionally use common data from R to prove data from R and charts from JavaScript.
+
+```{r}
+library(remiotic)
+
+remiotic(
+  data = mtcars,
+  frame = "XYFrame",
+  props = list(
+    shape = "points",
+    xAccessor = "wt",
+    yAccessor = "hp",
+    pointStyle = list(fill = "black")
+  ),
+  width = 300,
+  height = 200
+)
+```
+
+Let's pass a bigger list to see what happens.
+
+```{r}
+remiotic(
+  data = mtcars,
+  props = list(
+    title = "mtcars from R with Semiotic",
+    shape = "points",
+    xAccessor = "mpg",
+    xExtent = range(mtcars$mpg),
+    yAccessor = "hp",
+    yExent = range(mtcars$hp),
+    pointStyle = list(
+      fill = "red",
+      stroke = "blue",
+      strokeWidth = 5,
+      opacity = 0.5
+    ),
+    axes = list(
+      list(orient = "left", label = "Miles per Gallon (mpg)"),
+      list(orient = "bottom", label = "Horsepower (hp)")
+    ),
+    margin = list(
+      top = 40,
+      right = 20,
+      bottom = 60,
+      left = 70
+    ),
+    annotations = list(
+      list(type = "x", label = "mpg > 21 is good", mpg = 21, color = "red", dy = 50)
+    )
+  ),
+  width = 400,
+  height = 400
+)
+```
+
+## Lines
+
+```{r}
+
+remiotic(
+  # lines expected to be an array of arrays
+  #  for now do it the really ugly way
+  #  but should be able to fix this fairly easily
+  data = list(
+    list(
+      group = "A",
+      coordinates = lapply(0:10, function(x) list(x=x, y=runif(1)))
+    )
+  ),
+  frame = "XYFrame",
+  props = list(
+    shape = "lines",
+    xAccessor = "x",
+    yAccessor = "y",
+    xExtent = c(0, 10),
+    yExtent = c(0, 1),
+    lineStyle = list(stroke = "#629"),
+    margin = list(
+      top = 20,
+      right = 40,
+      bottom = 50,
+      left = 50
+    ),
+    axes = list(
+      list(orient = "left"),
+      list(orient = "bottom")
+    )
+  ),
+  width = "100%"
+)
+
+```
+
+## Discussion of API Options
+
+I'll get to this soon...
