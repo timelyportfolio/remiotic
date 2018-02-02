@@ -12,8 +12,13 @@ HTMLWidgets.widget({
 
       renderValue: function(x) {
 
-        x.props.points = HTMLWidgets.dataframeToD3(x.props.data)
-        delete x.props.data
+        var width = el.offsetWidth
+        var height = el.offsetHeight
+
+        x.props[x.props.shape] = HTMLWidgets.dataframeToD3(x.data)
+        delete x.props.shape
+
+        x.props.size = [width, height]
 
         var frame = React.createElement(
           Semiotic[x.frame],

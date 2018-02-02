@@ -6,6 +6,7 @@
 #'
 #' @export
 remiotic <- function(
+  data = NULL,
   frame = "XYFrame",
   props = NULL,
   width = NULL, height = NULL,
@@ -14,6 +15,7 @@ remiotic <- function(
 
   # forward options using x
   x = list(
+    data = data,
     frame = frame,
     props = props
   )
