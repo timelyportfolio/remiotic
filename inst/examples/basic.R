@@ -40,3 +40,17 @@ htmlwidgets::prependContent(
   rg,
   tags$style("text.frame-title {font-size: 2em;}")
 )
+
+
+remiotic(
+  data = data.frame(
+    x = 1:10,
+    y = runif(10)
+  ),
+  frame = "XYFrame",
+  props = list(
+    shape = "lines",
+    xAccessor = "x",
+    yAccessor = "y"
+  )
+)

@@ -16,7 +16,6 @@ HTMLWidgets.widget({
         var height = el.offsetHeight
 
         x.props[x.props.shape] = HTMLWidgets.dataframeToD3(x.data)
-        delete x.props.shape
 
         x.props.size = [width, height]
 
