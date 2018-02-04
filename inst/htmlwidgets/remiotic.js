@@ -20,7 +20,11 @@ HTMLWidgets.widget({
         if(Array.isArray(x.data)) {
           x.props[x.props.shape] = x.data
         } else {  // if not transform columns into rows
-          x.props[x.props.shape] = HTMLWidgets.dataframeToD3(x.data)
+          var data = HTMLWidgets.dataframeToD3(x.data)
+          if(!Array.isArray(x.props.shape)) {x.props.shape = [x.props.shape]}
+          x.props.shape.forEach(function(shp) {
+            x.props[shp] = data
+          })
         }
 
         x.props.size = [width, height]
