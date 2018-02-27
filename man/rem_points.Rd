@@ -4,7 +4,7 @@
 \alias{rem_points}
 \title{Title}
 \usage{
-rem_points(remwidget = NULL, pointStyle = NULL)
+rem_points(remwidget = NULL, pointStyle = NULL, pointClass = NULL)
 }
 \arguments{
 \item{pointStyle}{}

@@ -8,7 +8,9 @@ XYFrame(
   yAccessor = "Petal.Width",
   yExtent = c(0, max(iris$Petal.Width)),
   title = "Semiotic Using Frames API",
-  margin = list(top = 60, right = 20, bottom = 40, left = 50)
+  margin = list(top = 60, right = 20, bottom = 40, left = 50),
+  height = 400,
+  width = "100%"
 ) %>%
   rem_points() %>%
   rem_axes(orient = "bottom") %>%

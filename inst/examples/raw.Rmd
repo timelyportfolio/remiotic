@@ -12,7 +12,32 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-`remiotic` will bring the power of Semiotic to R, and hopefully the R user won't have to know JavaScript to use it.  The lazy way to build the bridge is to not document or validate and force the user to pass a list of list of lists to make their graph.  Since this is the first version and merely a proof-of-concept, this lazy approach is what I have done.  Let's see if it works.  Since this is a Rmarkdown document, if charts appear, then we prove part of the concept.
+```{r echo = FALSE}
+library(remiotic)
+spi <- spiotic(
+  # lines expected to be an array of arrays
+  #  for now do it the really ugly way
+  data = list(
+    list(
+      group = "A",
+      coordinates = lapply(0:10, function(x) list(x=x, y=runif(1)))
+    )
+  ),
+  frame = "SparkXYFrame",
+  props = list(
+    shape = "lines",
+    xAccessor = "x",
+    yAccessor = "y",
+    xExtent = c(0, 10),
+    yExtent = c(0, 1),
+    lineStyle = list(stroke = "black")
+  ),
+  width = 100
+)
+```
+
+`remiotic` will bring the power of Semiotic to R,`r spi`
+and hopefully the R user won't have to know JavaScript to use it.  The lazy way to build the bridge is to not document or validate and force the user to pass a list of list of lists to make their graph.  Since this is the first version and merely a proof-of-concept, this lazy approach is what I have done.  Let's see if it works.  Since this is a Rmarkdown document, if charts appear, then we prove part of the concept.
 
 ## Install
 
