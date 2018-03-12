@@ -44,7 +44,7 @@ and hopefully the R user won't have to know JavaScript to use it.  The lazy way 
 This is raw, alpha, and will change dramatically and rapidly, so you have been warned.  To install, use `devtools::install_bitbucket`.  Yep, bitbucket to keep it sneaky.
 
 ```{r eval = FALSE}
-devtools::install_bitbucket("timelyportfolio/remiotic")
+devtools::install_github("timelyportfolio/remiotic")
 ```
 
 ## Points
