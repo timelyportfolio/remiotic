@@ -4,9 +4,9 @@
 \alias{XYFrame}
 \title{Title}
 \usage{
-XYFrame(data = NULL, title = NULL, xAccessor = NULL, xExtent = NULL,
-  yAccessor = NULL, yExtent = NULL, width = NULL, height = NULL,
-  margin = NULL, elementId = NULL)
+XYFrame(data = NULL, title = NULL, xAccessor = NULL,
+  xExtent = NULL, yAccessor = NULL, yExtent = NULL, width = NULL,
+  height = NULL, margin = NULL, elementId = NULL)
 }
 \arguments{
 \item{yExent}{}

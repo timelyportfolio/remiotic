@@ -1,8 +1,8 @@
 Package: remiotic
 Type: Package
 Title: 'Htmlwidget' for Elijah Meeks Semiotic Visualizations
-Version: 0.1.0
-Date: 2018-03-11
+Version: 0.1.1
+Date: 2019-07-01
 Authors@R: c(
       person(
         "Elijah", "Meeks"
@@ -28,4 +28,4 @@ Imports:
     htmlwidgets,
     htmltools,
     reactR
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1

@@ -22,7 +22,7 @@ dep_corejs <- function() {
 dep_semiotic <- function() {
   htmltools::htmlDependency(
     name = "semiotic",
-    version = "1.6.0",
+    version = "1.9.11",
     src = c(file=system.file("www/semiotic/dist", package="remiotic")),
     script = "semiotic.min.js"
   )

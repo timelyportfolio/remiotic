@@ -4,8 +4,8 @@
 \alias{spiotic}
 \title{<Add Title>}
 \usage{
-spiotic(data = NULL, frame = "SparkXYFrame", props = NULL, width = 60,
-  height = 20, elementId = NULL)
+spiotic(data = NULL, frame = "SparkXYFrame", props = NULL,
+  width = 60, height = 20, elementId = NULL)
 }
 \description{
 <Add Description>

@@ -4,8 +4,8 @@
 \alias{remiotic}
 \title{<Add Title>}
 \usage{
-remiotic(data = NULL, frame = "XYFrame", props = NULL, width = NULL,
-  height = NULL, elementId = NULL)
+remiotic(data = NULL, frame = "XYFrame", props = NULL,
+  width = NULL, height = NULL, elementId = NULL)
 }
 \description{
 <Add Description>
